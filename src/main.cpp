@@ -24,14 +24,14 @@ float pitch     = 0.0f, yaw         = -90.0f;
 float lastX = windowWidth/2, lastY = windowHeight/2;
 
 const float gravityAcc  = 9.8f;
-const float sensitivity = 0.1f;
+const float mouseSensitivity = 0.1f;
 bool mouseStart = true;
 bool onLand     = true;
 bool jumped     = false;
 float jumpFrame = 0.0f, airTime = 0.0f;
 
-float playerHeight = 1.0f;
-float playerSpeed  = 2.0f;
+const float playerHeight = 1.0f;
+const float playerSpeed  = 2.0f;
 glm::vec3 cameraPos = glm::vec3(50.0f, playerHeight, 50.0f);
 glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
 glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
@@ -69,6 +69,7 @@ int main()
 
     glfwMakeContextCurrent(window);
 
+    // set to 0 to disable vsync
     glfwSwapInterval(1);
     gladLoadGL();
 
@@ -142,6 +143,7 @@ int main()
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
 
+        // uncomment to see fps
         // std::cout << 1/deltaTime << std::endl;
 
         processInput(window);
@@ -293,8 +295,8 @@ void rotateCamera(GLFWwindow *window, double xPos, double yPos)
         mouseStart = false;
     }
 
-    float xOffset = (xPos - lastX) * sensitivity;
-    float yOffset = (yPos - lastY) * sensitivity;
+    float xOffset = (xPos - lastX) * mouseSensitivity;
+    float yOffset = (yPos - lastY) * mouseSensitivity;
 
     lastX = xPos;
     lastY = yPos; 
