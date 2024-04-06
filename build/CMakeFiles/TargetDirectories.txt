@@ -1,0 +1,3 @@
+C:/Users/natha/Desktop/programs/graphics/build/CMakeFiles/graphics_dingusness.dir
+C:/Users/natha/Desktop/programs/graphics/build/CMakeFiles/edit_cache.dir
+C:/Users/natha/Desktop/programs/graphics/build/CMakeFiles/rebuild_cache.dir
